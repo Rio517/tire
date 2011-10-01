@@ -15,9 +15,7 @@ module Tire
       end
 
       def terms(field, options={})
-        size      = options.delete(:size) || 10
-        all_terms = options.delete(:all_terms) || false
-        @value = { :terms => { :field => field, :size => size, :all_terms => all_terms } }.update(options)
+        @value = { :terms => {:size => 10, :all_terms => false, :field => field}.update(options) }
         self
       end
 
